@@ -1,3 +1,21 @@
+
+let currentIndex = 0;
+const images = document.querySelectorAll('.slideshow img');
+
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('show');
+}
+
+function showNextImage() {
+  images[currentIndex].style.opacity = '0';
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].style.opacity = '1';
+}
+
+// Change image every 30 seconds
+setInterval(showNextImage, 30000);
+
 function removeAll(s)
 {
 for(var i=s.options.length-1;i>=0;i--)
